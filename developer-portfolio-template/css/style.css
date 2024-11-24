@@ -1306,7 +1306,7 @@ a:focus {
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
-.contact {
+/* .contact {
     position: relative;
     width: 100%;
     margin: 45px 0;
@@ -1384,7 +1384,83 @@ a:focus {
     .contact .contact-form {
         padding: 90px 0;
     }
+} */
+
+
+.contact-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
 }
+
+.contact-heading .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-heading .section-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.contact-form .form-control {
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.contact-form .btn-primary {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adds spacing between the icon and the text */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-primary i {
+    font-size: 1.1rem;
+}
+
 
 
 /*******************************/
