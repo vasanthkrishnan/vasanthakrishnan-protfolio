@@ -35,6 +35,7 @@ a:focus {
 }
 
 .container-fluid {
+    background-image: none !;
     max-width: 1366px;
 }
 
@@ -137,9 +138,12 @@ a:focus {
     position: relative;
     transition: .5s;
     z-index: 999;
+    background-image: none !important;
+    background: #f8f8f8;
 }
 
 .navbar.nav-sticky {
+    background: #f8f8f8 !important;
     position: fixed;
     top: 0;
     width: 100%;
@@ -148,10 +152,10 @@ a:focus {
 
 .navbar .navbar-brand {
     margin: 0;
-    font-size: 45px;
+    font-size: 28px;
     line-height: 0px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: normal;
     transition: .5s;
     
 }
@@ -184,11 +188,11 @@ a:focus {
     }
     
     .navbar .navbar-brand {
-        color: #ffffff;
+        color: #000;
     }
     
     .navbar.nav-sticky .navbar-brand {
-        color: #EF233C;
+        color: #000;
     }
 
     .navbar-light .navbar-nav .nav-link,
@@ -211,7 +215,7 @@ a:focus {
     
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
-        color: #EF233C;
+        color: #000;
     }
 }
 
@@ -222,7 +226,7 @@ a:focus {
     }
     
     .navbar .navbar-brand {
-        color: #EF233C;
+        color: #000;
     }
     
     .navbar .navbar-nav {
@@ -287,9 +291,9 @@ a:focus {
 
 .hero .hero-text h1 {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     margin-bottom: 15px;
 }
 
@@ -492,8 +496,8 @@ a:focus {
 
 .about .about-img img {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 80%0%;
+    height: 80%;
     object-fit: cover;
 }
 
@@ -517,7 +521,7 @@ a:focus {
     display: inline-block;
     margin-bottom: 5px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .about .skill-name p:last-child {
