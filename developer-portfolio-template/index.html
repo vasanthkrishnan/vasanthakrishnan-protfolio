@@ -517,44 +517,60 @@
         <!-- Testimonial Start -->
          <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
             <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <!-- <p>My Team</p> -->
+                    <h2>Services</h2>
+                </div>
                 <div class="testimonial-icon">
                     <i class="fa fa-quote-left"></i>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-                            <img src="img/testimonial-1.jpg" alt="Image">
+                            <img src="img/web development.jpg" alt="Image">
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
+                                I create responsive, user-friendly websites with modern designs, secure backend solutions, SEO optimization, and seamless functionality for businesses.
                             </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
+                            <h3 style="font-size: 28px;">Web Development Service</h3>
+                            <!-- <h4>Profession</h4> -->
                         </div>
                     </div>
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" alt="Image">
+                            <img src="img/database.jpg" alt="Image">
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
+                                I design, optimize, and manage databases for efficient data storage, seamless access, high performance, and secure, reliable operations.
                             </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
+                            <h3 style="font-size: 28px;">Database Management</h3>
+                            <!-- <h4>Profession</h4> -->
                         </div>
                     </div>
                     <div class="testimonial-item">
                         <div class="testimonial-img">
-                            <img src="img/testimonial-3.jpg" alt="Image">
+                            <img src="img/full stack.jpg" alt="Image">
                         </div>
                         <div class="testimonial-text">
                             <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
+                                I develop dynamic, end-to-end web applications, combining responsive frontend design, secure backend systems, seamless integration, and optimized performance.
                             </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
+                            <h3 style="font-size: 28px;">Full Stack Development</h3>
+                            <!-- <h4>Profession</h4> -->
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+                            <img src="img/full stack.jpg" alt="Image">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>
+                                I build custom software solutions tailored to your needs, focusing on functionality, scalability, performance, and delivering exceptional user experiences.
+                            </p>
+                            <h3 style="font-size: 28px;">Software Development</h3>
+                            <!-- <h4>Profession</h4> -->
                         </div>
                     </div>
                 </div>
@@ -658,7 +674,7 @@
         
         
         <!-- Contact Start -->
-        <div class="contact-section" id="contact">
+        <!-- <div class="contact-section" id="contact">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
@@ -691,7 +707,7 @@
                                     <textarea class="form-control" id="message" rows="4" placeholder="Write your message here" required></textarea>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" id="sendMessageButton">
                                         <i class="fas fa-paper-plane"></i> Send Message
                                     </button>
                                 </div>                                
@@ -700,7 +716,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <!-- <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
             <div class="container-fluid">
@@ -737,6 +753,54 @@
                 </div>
             </div>
         </div> -->
+        <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
+            <div class="container-fluid p-0">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>Contact</p>
+                    <!-- <h2>Expert Team Members</h2> -->
+                </div>
+                <div class="row g-0">
+                    <!-- Left Section with Visuals or Intro -->
+                    <div class="col-lg-6 contact-left d-flex align-items-center justify-content-center">
+                        <div class="p-5 text-center text-white">
+                            <h2 class="section-title mb-4">Let's Connect</h2>
+                            <p class="mb-5">I’d love to hear about your project, ideas, or anything you'd like to share. Whether you have questions or want to collaborate, feel free to fill out the form below, and I’ll get back to you as soon as possible.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Right Section with Form -->
+                    <div class="col-lg-6 contact-right">
+                        <div class="contact-form-container">
+                            <div class="contact-form shadow-lg p-4 rounded bg-white">
+                                <div id="success"></div>
+                                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                    <div class="mb-4">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="6" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary w-100 py-2" type="submit" id="sendMessageButton">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- Contact End -->
 
 
