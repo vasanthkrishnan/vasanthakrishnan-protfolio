@@ -158,6 +158,7 @@
                                 <h3>Programming Languages</h3>
                                 <p>C - Programming</p>
                                 <p>Java - Programming</p>
+                                <p>Python = Programming</p>
                                 <p>HTML, CSS, JavaScript</p>
                                 <p>MERN</p>
                             </div>
@@ -423,19 +424,25 @@
                                 <form name="sentMessage" id="contactForm" novalidate="novalidate">
                                     <div class="mb-4">
                                         <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                        <p class="help-block text-danger"></p>
+                                        <p id="nameError" class="help-block text-danger"></p>
+                                        <div id="successMessage" class="message-box success hidden">
+                                            Your message has been sent successfully!
+                                        </div>
+                                        <div id="errorMessage" class="message-box error hidden">
+                                            Oops! Something went wrong. Please try again later.
+                                        </div>
                                     </div>
                                     <div class="mb-4">
                                         <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                        <p class="help-block text-danger"></p>
+                                        <p id="emailError" class="help-block text-danger"></p>
                                     </div>
                                     <div class="mb-4">
                                         <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                        <p class="help-block text-danger"></p>
+                                        <p id="subjectError" class="help-block text-danger"></p>
                                     </div>
                                     <div class="mb-4">
                                         <textarea class="form-control" id="message" placeholder="Your Message" rows="6" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                        <p class="help-block text-danger"></p>
+                                        <p id="messageError" class="help-block text-danger"></p>
                                     </div>
                                     <div>
                                         <button class="btn btn-primary w-100 py-2" type="submit" id="sendMessageButton">Send Message</button>
@@ -491,6 +498,85 @@
             <div class="loader"></div>
         </div>
 
+        <script>
+   document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('subjectError').textContent = '';
+    document.getElementById('messageError').textContent = '';
+
+    let hasError = false;
+
+    if (!name) {
+        document.getElementById('nameError').textContent = 'Name is required.';
+        hasError = true;
+    }
+
+    if (!email) {
+        document.getElementById('emailError').textContent = 'Email is required.';
+        hasError = true;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+        document.getElementById('emailError').textContent = 'Enter a valid email.';
+        hasError = true;
+    }
+
+    if (!subject) {
+        document.getElementById('subjectError').textContent = 'Subject is required.';
+        hasError = true;
+    }
+
+    if (!message) {
+        document.getElementById('messageError').textContent = 'Message is required.';
+        hasError = true;
+    }
+
+    if (hasError) {
+        return; 
+    }
+
+    try {
+        const response = await fetch('http://localhost:5000/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, subject, message }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            showMessage('successMessage');
+            document.getElementById('contactForm').reset();
+        } else {
+            showMessage('errorMessage');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showMessage('errorMessage');
+    }
+});
+
+function showMessage(elementId) {
+    const messageBox = document.getElementById(elementId);
+    messageBox.classList.remove('hidden');
+    messageBox.classList.add('show');
+    
+    setTimeout(() => {
+        messageBox.classList.remove('show');
+        messageBox.classList.add('hidden');
+    }, 3000); 
+}
+
+        </script>
+
         
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -505,7 +591,7 @@
         
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+        <!-- <script src="mail/contact.js"></script> -->
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>

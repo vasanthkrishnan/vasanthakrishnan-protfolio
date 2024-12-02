@@ -1240,3 +1240,37 @@ a:focus {
         padding: 0 5px;
     }
 }
+
+
+
+.message-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.message-box.success {
+    background-color: #28a745; /* Green */
+}
+
+.message-box.error {
+    background-color: #dc3545; /* Red */
+}
+
+.message-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
