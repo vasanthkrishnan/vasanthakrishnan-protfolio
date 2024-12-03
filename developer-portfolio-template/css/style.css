@@ -555,6 +555,12 @@ a:focus {
         padding: 45px 15px 0 15px;
     }
 }
+@media (max-width: 768px) {
+    .about .about-img img {
+        width: 100%; 
+        height: auto; 
+    }
+}
 
 
 /*******************************/
@@ -1026,11 +1032,14 @@ a:focus {
     width: 100%;
     height: 95vh;
     overflow: hidden;
+    display: flex; 
+    flex-direction: row; 
 }
 
 .contact-left {
     color: white;
     padding: 2rem;
+    flex: 1;
 }
 .contact-left h2 {
     font-size: 3rem;
@@ -1049,6 +1058,7 @@ a:focus {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    flex: 1; /* Allow the right section to take equal space */
 }
 
 .contact-form-container {
@@ -1097,16 +1107,44 @@ a:focus {
 
 @media (max-width: 768px) {
     .contact {
-        height: auto;
+        flex-direction: column; 
+        height: auto; 
     }
+
     .contact-left {
-        display: none;
+        padding: 1rem; 
+        text-align: center; 
     }
+
+    .contact-left h2 {
+        font-size: 2rem; 
+    }
+
+    .contact-left p {
+        font-size: 1rem; 
+    }
+
     .contact-right {
+        padding: 1rem; 
+    }
+
+    .contact-form-container {
+        max-width: 100%; 
         width: 100%;
-        padding: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px; 
+        font-size: 0.9rem; 
+    }
+
+    .contact-form button {
+        padding: 10px; 
+        font-size: 1rem; 
     }
 }
+
 
 
 
@@ -1222,24 +1260,52 @@ a:focus {
     color: #414141;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 768px) {
     .footer .footer-info h2 {
-        margin-bottom: 20px;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 24px; 
     }
 
     .footer .footer-info h3 {
-        margin-bottom: 20px;
-        font-size: 16px;
+        font-size: 18px; 
+    }
+
+    .footer .footer-menu {
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .footer .footer-menu p {
-        font-size: 16px;
-        line-height: 16px;
-        padding: 0 5px;
+        font-size: 18px; 
+        margin-bottom: 10px; 
+        padding: 5px 0; 
+        border-right: none; 
+    }
+
+    .footer .footer-social a i {
+        font-size: 18px; 
+        margin-right: 10px; 
+    }
+
+    .footer .copyright {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .footer .copyright::before {
+        width: 30%; 
+        left: 35%; 
+    }
+
+    .footer .copyright p {
+        font-size: 14px; 
+    }
+
+    .footer .footer-info,
+    .footer .footer-social {
+        padding: 0 15px; 
     }
 }
+
 
 
 
@@ -1259,11 +1325,11 @@ a:focus {
 }
 
 .message-box.success {
-    background-color: #28a745; /* Green */
+    background-color: #28a745; 
 }
 
 .message-box.error {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545; 
 }
 
 .message-box.show {
@@ -1274,3 +1340,25 @@ a:focus {
 .hidden {
     display: none;
 }
+
+@media (max-width: 768px) {
+    .message-box {
+        top: 10px; 
+        right: 10px; 
+        font-size: 14px; 
+        padding: 12px 15px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .message-box {
+        font-size: 12px; 
+        padding: 10px 12px; 
+    }
+}
+
+
+.liked {
+    color: red; 
+}
+

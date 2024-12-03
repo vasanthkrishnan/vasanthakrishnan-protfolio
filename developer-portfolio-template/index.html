@@ -39,14 +39,13 @@
                         <a href="#about" class="nav-item nav-link">About</a>
                         <a href="#service" class="nav-item nav-link">Skills</a>
                         <a href="#experience" class="nav-item nav-link">Projects</a>
-                        <!-- <a href="#portfolio" class="nav-item nav-link">Portfolio</a> -->
-                        <!-- <a href="#price" class="nav-item nav-link">Price</a> -->
                         <a href="#review" class="nav-item nav-link">Service</a>
-                        <!-- <a href="#team" class="nav-item nav-link">Team</a> -->
-                        <!-- <a href="#blog" class="nav-item nav-link">Blog</a> -->
                         <a href="#contact" class="nav-item nav-link">Contact</a>
+                        <a href="#" id="likeIcon" class="nav-item nav-link">
+                            <i class="fa fa-heart" style="font-size: 1.5rem;" id="heartIcon"></i> <span id="likeCount">0</span>
+                        </a>
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
         <!-- Nav Bar End -->
@@ -66,7 +65,7 @@
                                 <div class="typed-text">Web Developer, Java - Programmer, Full Stack Developer, Mern Stack Developer</div>
                             </div>
                             <div class="hero-btn">
-                                <a class="btn" href="">Download CV</a>
+                                <a class="btn" href="../developer-portfolio-template/resume/resume.pdf" download="">Download CV</a>
                                 <a class="btn" href="#contact">Contact Me</a>
                             </div>
                         </div>
@@ -574,6 +573,36 @@ function showMessage(elementId) {
         messageBox.classList.add('hidden');
     }, 3000); 
 }
+
+        </script>
+        <script>
+            const heartIcon = document.getElementById('heartIcon');
+            const likeCountElement = document.getElementById('likeCount');
+            let likeCount = localStorage.getItem('likeCount');
+            if (likeCount === null) {
+                likeCount = 0; 
+            } else {
+                likeCount = parseInt(likeCount); 
+            }
+
+            let userHasLiked = localStorage.getItem('userHasLiked');
+            if (userHasLiked === 'true') {
+                heartIcon.classList.add('liked'); 
+                heartIcon.style.pointerEvents = 'none'; 
+            }
+
+            likeCountElement.textContent = likeCount;
+
+            heartIcon.addEventListener('click', function() {
+            if (userHasLiked !== 'true') {
+                likeCount++; 
+                localStorage.setItem('likeCount', likeCount); 
+                likeCountElement.textContent = likeCount; 
+                localStorage.setItem('userHasLiked', 'true'); 
+                heartIcon.classList.add('liked'); 
+                heartIcon.style.pointerEvents = 'none';
+            }
+            });
 
         </script>
 
